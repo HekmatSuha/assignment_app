@@ -5,9 +5,9 @@ require_once 'includes/functions.php';
 // Redirect if already logged in
 if (isLoggedIn()) {
     if (hasRole('teacher')) {
-        header('Location: teacher/dashboard.php');
+        header('Location: teacher_dashboard.php');
     } else {
-        header('Location: student/dashboard.php');
+        header('Location: student_dashboard.php');
     }
     exit;
 }
@@ -33,9 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['full_name'] = $user['full_name'];
                 
                 if ($user['role'] === 'teacher') {
-                    header('Location: teacher/dashboard.php');
+                    header('Location: teacher_dashboard.php');
                 } else {
-                    header('Location: student/dashboard.php');
+                    header('Location: student_dashboard.php');
                 }
                 exit;
             } else {
@@ -58,7 +58,7 @@ $page_title = 'Login - Assignment System';
     <title><?php echo $page_title; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
     <div class="login-container">
@@ -114,6 +114,6 @@ $page_title = 'Login - Assignment System';
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
