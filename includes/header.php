@@ -6,7 +6,7 @@
     <title><?php echo isset($page_title) ? $page_title : 'Assignment System'; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="/assignment_system/assets/css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
     <?php if (isLoggedIn()): ?>
@@ -24,33 +24,33 @@
                 <ul class="navbar-nav me-auto">
                     <?php if (hasRole('teacher')): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="/assignment_system/teacher/dashboard.php">
+                            <a class="nav-link" href="/teacher_dashboard.php">
                                 <i class="fas fa-dashboard"></i> Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/assignment_system/teacher/create_assignment.php">
+                            <a class="nav-link" href="/create_assignment.php">
                                 <i class="fas fa-plus"></i> Create Assignment
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/assignment_system/teacher/view_submissions.php">
+                            <a class="nav-link" href="/view_submission.php">
                                 <i class="fas fa-file-alt"></i> View Submissions
                             </a>
                         </li>
                     <?php else: ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="/assignment_system/student/dashboard.php">
+                            <a class="nav-link" href="/student_dashboard.php">
                                 <i class="fas fa-dashboard"></i> Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/assignment_system/student/view_assignments.php">
+                            <a class="nav-link" href="/student_dashboard.php">
                                 <i class="fas fa-tasks"></i> Assignments
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/assignment_system/student/my_submissions.php">
+                            <a class="nav-link" href="/student_dashboard.php">
                                 <i class="fas fa-upload"></i> My Submissions
                             </a>
                         </li>
@@ -63,7 +63,7 @@
                             <i class="fas fa-user"></i> <?php echo $_SESSION['full_name']; ?>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/assignment_system/logout.php">
+                            <li><a class="dropdown-item" href="/logout.php">
                                 <i class="fas fa-sign-out-alt"></i> Logout
                             </a></li>
                         </ul>

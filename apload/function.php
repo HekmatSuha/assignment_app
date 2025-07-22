@@ -14,7 +14,7 @@ function hasRole($role) {
 // Redirect if not logged in
 function requireLogin() {
     if (!isLoggedIn()) {
-        header('Location: /assignment_system/index.php');
+        header('Location: /index.php');
         exit;
     }
 }
@@ -23,7 +23,7 @@ function requireLogin() {
 function requireTeacher() {
     requireLogin();
     if (!hasRole('teacher')) {
-        header('Location: /assignment_system/student/dashboard.php');
+        header('Location: /student_dashboard.php');
         exit;
     }
 }
@@ -32,7 +32,7 @@ function requireTeacher() {
 function requireStudent() {
     requireLogin();
     if (!hasRole('student')) {
-        header('Location: /assignment_system/teacher/dashboard.php');
+        header('Location: /teacher_dashboard.php');
         exit;
     }
 }
